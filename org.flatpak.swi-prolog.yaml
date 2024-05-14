@@ -1,0 +1,22 @@
+id: org.flatpak.swi-prolog
+runtime: org.kde.Platform
+runtime-version: 6.7
+sdk: org.kde.Sdk
+command: swipl
+
+finish-args:
+  - --share=ipc
+  - --socket=x11
+  - --socket=wayland
+  - --filesystem=host
+  - --device=dri
+
+modules:  
+  - name: swipl
+    sources:
+      - path: ../swipl-devel
+        type: dir
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+
