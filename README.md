@@ -10,10 +10,25 @@
 
     flatpak run org.kde.Sdk//6.7
 
-## Build
+## Other actions
 
-    flatpak-builder --user --ccache --force-clean app org.flatpak.swi-prolog.yaml
+See `Makefile`.
 
-Other options
+## Status
 
- - --repo=repo
+This is a proof of concept.  Currently builds, but `make linter` gives
+
+```
+flatpak run --command=flatpak-builder-lint org.flatpak.Builder repo repo
+{
+    "errors": [
+        "appstream-missing-appinfo-file",
+        "appstream-metainfo-missing",
+        "appstream-missing-appinfo"
+    ],
+    "warnings": [
+        "finish-args-contains-both-x11-and-wayland"
+    ],
+    "message": "Please consult the documentation at https://docs.flathub.org/docs/for-app-authors/linter"
+}
+```
