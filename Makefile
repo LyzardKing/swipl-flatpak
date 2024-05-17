@@ -1,4 +1,4 @@
-MANIFEST=org.flatpak.swi-prolog.yml
+MANIFEST=org.swi_prolog.swipl.yml
 BUILD_OPTS=--user --ccache --force-clean --sandbox --install --install-deps-from=flathub --mirror-screenshots-url=https://dl.flathub.org/media/ --repo=repo
 
 all:
